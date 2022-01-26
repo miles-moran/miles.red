@@ -20,7 +20,7 @@ export const Home = () => {
         .
       </p>
       <p className="home-p">
-        I'm originally from St. Louis, Missouri, but I now find myself in Puerto Vallarta, Mexico. I can often be found coding in coffee shops.
+        I'm originally from St. Louis, Missouri, but I now find myself in Puerto Vallarta, Mexico. I can often be seen coding in coffee shops.
       </p>
       <div>
         <div>
