@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect } from "react/cjs/react.production.min";
+import { useEffect } from "react";
 import { Home } from "./components/Home";
 import { Projects } from "./components/Projects";
 import { Wordle } from "./components/Wordle";

@@ -205,7 +205,7 @@ a:after {
   bottom: 0;
   transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
   transition-delay: 0;
-  background-color: rgba(79, 192, 141, 0.5);
+  background-color: rgba(255, 86, 86, 0.5);
 }
 
 .a-git:after {
