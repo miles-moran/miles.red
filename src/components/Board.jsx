@@ -1,4 +1,4 @@
-export const Board = ({solution, attempts}) => {
+export const Board = ({solution, attempts, bad}) => {
     const styles = {
         'green': '#6aaa64',
         'yellow': '#c9b458',
@@ -8,7 +8,7 @@ export const Board = ({solution, attempts}) => {
     return (
         <div className="board-container">
           <div className="board">
-            <div className='row'>
+            <div className={bad ? 'row bad-guess' : 'row' } >
           {solution !== undefined && [0, 1, 2, 3, 4].map((i) => <span key={`${i}`} className={solution.length > i ? 'tile blank occupied pop' : 'tile blank vacant'} style={{backgroundColor: "#fffff"}}>
           {solution.length > i && solution[i]}
             </span>)}
