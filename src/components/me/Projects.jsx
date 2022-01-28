@@ -8,7 +8,13 @@ export const Projects = () => {
         <div style={{ fontWeight: "400" }} target="_blank">
           Wordle Solver
         </div>
-        <div>Solves wordle puzzles.</div>
+        <div>
+          Solves {" "}
+          <a href="https://www.powerlanguage.co.uk/wordle/" className="a-home" target="_blank" rel="noreferrer">
+            Wordle
+          </a>{" "}
+          puzzles.
+        </div>
         <a className="a-git" href="/projects/wordle" target="_blank">
           app
         </a>{" "}

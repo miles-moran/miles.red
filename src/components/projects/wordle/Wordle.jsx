@@ -135,9 +135,11 @@ export const Wordle = () => {
             <div>
               <i onClick={() => toggleModal(null)} style={{ float: "right" }} className="fas wordle-icon fa-lg fa-times"></i>
             </div>
-            <h3>Guess Distribution</h3>
+            <h3>Statistics</h3>
             <p>Taken from the original Wordle pool of 2135.</p>
-            <p>Solves Wordle puzzles in ~3.7 turns.</p>
+            <h3>Average</h3>
+            <p>3.7 turns</p>
+            <h3>Guess Distribution</h3>
             <div>
               {Object.keys(distibution).map((d) => (
                 <div key={d} className="graph-container">
@@ -159,8 +161,13 @@ export const Wordle = () => {
             <div>
               <i onClick={() => toggleModal(null)} style={{ float: "right" }} className="fas wordle-icon fa-lg fa-times"></i>
             </div>
+            <h3>Instructions:</h3>
+            <p>Choose any five letter word (if the word does not exist, it will be added to the pool of solutions anyways). The script will try to solve the Wordle puzzle in as few attempts as possible.</p>
             <h3>How it works:</h3>
-            <p>While there are only 2,315 possible solutions, this app uses a pool of over 5,000 additional words to guess. This script takes a conservative approach to the game and aims to solve in fewer than seven turns, rather than going for a high average score.</p>
+            <p>
+              The script tries to come up with guesses that will elimate as many possible solutions as it can. While there are only 2,315 possible solutions, this app uses a pool of over 5,000 additional words for guesses. This script takes a conservative approach to the game and aims to solve in fewer
+              than seven turns, rather than going for a high average score.
+            </p>
             <h3>Credits to:</h3>
             <p>
               Power Language, creator of{" "}
