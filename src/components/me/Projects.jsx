@@ -18,6 +18,9 @@ export const Projects = () => {
           </a>{" "}
           puzzles.
         </div>
+        {/* <div className="project-description">
+         python, react, serverless framework
+        </div> */}
         <a className="a bg-orange" href="/projects/wordle" target="_blank">
           app
         </a>{" "}
@@ -36,6 +39,9 @@ export const Projects = () => {
           </a>
           .
         </div>
+        {/* <div className="project-description">
+         python, react
+        </div> */}
         <a className="a bg-orange" href="https://www.codenamer.com" target="_blank" rel="noreferrer">
           app
         </a>{" "}

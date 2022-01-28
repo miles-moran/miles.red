@@ -123,3 +123,7 @@ a:hover:after {
 .bg-purple:after {
   background-color: rgba(211, 101, 255, 0.5);
 }
+
+.project-description {
+  font-size: 1.2rem;
+}
