@@ -239,11 +239,11 @@
 }
 .loading-3 {
   animation-name: slidein;
-  animation-duration: 4500ms;
+  animation-duration: 3500ms;
 }
 .loading-4 {
   animation-name: slidein;
-  animation-duration: 5000ms;
+  animation-duration: 3000ms;
 }
 
 

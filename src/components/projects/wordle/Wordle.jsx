@@ -171,12 +171,12 @@ export const Wordle = () => {
             <h3>Credits to:</h3>
             <p>
               Power Language, creator of{" "}
-              <a href="https://www.powerlanguage.co.uk/wordle/" className="a-wordle" target="_blank" rel="noreferrer">
+              <a href="https://www.powerlanguage.co.uk/wordle/" className="a bg-purple" target="_blank" rel="noreferrer">
                 Wordle
               </a>
             </p>
             <h3>Code:</h3>
-            <a href="https://github.com/miles-moran/wordle-solver" className="a-git" target="_blank" rel="noreferrer">
+            <a href="https://github.com/miles-moran/wordle-solver" className="a bg-blue" target="_blank" rel="noreferrer">
               github
             </a>
           </div>
