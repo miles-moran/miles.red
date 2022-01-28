@@ -20,8 +20,8 @@ export const Navigation = () => {
     <div>
       <div>
         <div className="nav">
-          {PATHS.map((path) => (
-            <a className={path.href === location.pathname ? "mr-05 bg-green filled": "mr-05 bg-green a" } href={path.href} rel="noreferrer">
+          {PATHS.map((path, i) => (
+            <a key={i} className={path.href === location.pathname ? "mr-05 bg-green filled": "mr-05 bg-green a" } href={path.href} rel="noreferrer">
               {path.name}
             </a>
           ))}

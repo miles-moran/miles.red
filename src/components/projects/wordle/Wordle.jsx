@@ -136,7 +136,7 @@ export const Wordle = () => {
               <i onClick={() => toggleModal(null)} style={{ float: "right" }} className="fas wordle-icon fa-lg fa-times"></i>
             </div>
             <h3>Statistics</h3>
-            <p>Taken from the original Wordle pool of 2135.</p>
+            <p>Gathered from the original Wordle pool of 2135.</p>
             <h3>Average</h3>
             <p>3.7 turns</p>
             <h3>Guess Distribution</h3>

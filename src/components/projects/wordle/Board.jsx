@@ -14,7 +14,7 @@ export const Board = ({ solution, attempts, bad, loading }) => {
       },
     ];
   }
-  console.log(blocks);
+
   return (
     <div className="center-container">
       <div id="board">

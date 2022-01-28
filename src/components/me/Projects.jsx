@@ -39,7 +39,7 @@ export const Projects = () => {
         <a className="a bg-orange" href="https://www.codenamer.com" target="_blank" rel="noreferrer">
           app
         </a>{" "}
-        <a className="a bg-blue" href="/projects/wordle" target="_blank">
+        <a className="a bg-blue" href="https://github.com/miles-moran/codenamer" target="_blank" rel="noreferrer">
           git
         </a>
       </div>
