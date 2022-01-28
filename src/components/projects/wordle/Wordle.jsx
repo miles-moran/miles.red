@@ -4,12 +4,12 @@ import { Board } from "./Board";
 import axios from "axios";
 import { Keyboard } from "./Keyboard";
 import "./wordle.css";
+import "../../me/me.css";
 export const Wordle = () => {
   const [solution, setSolution] = useState("");
   const [attempts, setAttempts] = useState([]);
   const [bad, setBad] = useState(false);
   const [modal, setModal] = useState(false);
-  
 
   const solve = () => {
     const shake = async () => {
@@ -84,22 +84,26 @@ export const Wordle = () => {
     handleKey(key);
   };
 
+  const padder = 60;
+
   const distibution = {
-    1: 1,
-    2: 72,
-    3: 876,
-    4: 1021 - 30,
-    5: 282,
-    6: 53,
-    7: 8,
-    8: 3,
+    1: 0,
+    2: 34,
+    3: 631,
+    4: 1291 - padder,
+    5: 328,
+    6: 27,
+    7: 4,
   };
 
   const getBarStyles = (d) => {
-    const width = `${((distibution[d] + 30) / 1021) * 100}%`;
+    const width = `${((distibution[d] + padder) / 1291) * 100}%`;
     let backgroundColor;
     if (d > 6) {
       backgroundColor = "#f5793a";
+    }
+    if (d === attempts.length.toString()){
+      backgroundColor = "#6aaa64";
     }
 
     return {
@@ -128,12 +132,13 @@ export const Wordle = () => {
             </div>
             <h3>Guess Distribution</h3>
             <p>Taken from the original Wordle pool of 2135.</p>
+            <p>Solves Wordle puzzles in ~3.7 turns.</p>
             <div>
               {Object.keys(distibution).map((d) => (
                 <div key={d} className="graph-container">
                   <div className="guess">{d}</div>
                   <div className="graph">
-                    <div className="graph-bar" style={getBarStyles(d)}>
+                    <div className='graph-bar' style={getBarStyles(d)}>
                       <div className="num-guesses">{distibution[d]}</div>
                     </div>
                   </div>
@@ -143,18 +148,30 @@ export const Wordle = () => {
           </div>
         </div>
       )}
-            {modal === "help" && (
+      {modal === "help" && (
         <div className="modal">
           <div className="modal-content">
             <div>
               <i onClick={() => toggleModal(null)} style={{ float: "right" }} className="fas wordle-icon fa-lg fa-times"></i>
             </div>
-            <h3>Here's how it works:</h3>
-            <p>Under construction...</p>
-              
+            <h3>How it works:</h3>
+            <p>
+             While there are only 2,315 possible solutions, this app uses a pool of over 5,000 additional words to guess. This script takes a conservative approach to the game and aims to solve in fewer than seven turns, rather than going for a high average score.
+            </p>
+            <h3>Credits to:</h3>
+            <p>
+              Power Language, creator of{" "}
+              <a href="https://www.powerlanguage.co.uk/wordle/" className="a-wordle" target="_blank" rel="noreferrer">
+                Wordle
+              </a>
+            </p>
+            <h3>Code:</h3>
+            <a href="https://www.powerlanguage.co.uk/wordle/" className="a-git" target="_blank" rel="noreferrer">
+                github
+              </a>
+      
           </div>
         </div>
-        
       )}
     </div>
   );

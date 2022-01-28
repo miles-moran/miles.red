@@ -97,7 +97,7 @@
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  -webkit-tap-highlight-color: rgba(0,0,0,0.3);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
 }
 
 .tile {
@@ -115,11 +115,11 @@
   color: white;
   text-transform: uppercase;
   -webkit-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .tile::before {
-  content: '';
+  content: "";
   display: inline-block;
   padding-bottom: 100%;
 }
@@ -150,66 +150,68 @@
 }
 
 .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    overflow: hidden;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
 
 #wordle-nav {
-    width: 500px;
+  width: 500px;
 }
 
 .special-key {
-    color: white;
-    background-color: #878a8c;
+  color: white;
+  background-color: #878a8c;
 }
 
-.wordle-icon { 
-    color: #878a8c;
-    cursor: pointer;
+.wordle-icon {
+  color: #878a8c;
+  cursor: pointer;
 }
 
 #wordle-nav {
-    margin-top: .5rem;
-    text-align: center;
-    border-bottom: #d3d6da solid 1px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-top: 0.5rem;
+  text-align: center;
+  border-bottom: #d3d6da solid 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .graph-container {
-    width: 100%;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    padding-bottom: 4px;
-    font-size: 14px;
-    line-height: 20px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .graph {
-    width: 100%;
-    height: 100%;
-    padding-left: 4px;
+  width: 100%;
+  height: 100%;
+  padding-left: 4px;
 }
 
 .graph-bar {
-    justify-content: flex-end;
-    padding-right: 8px;
-    background-color: #878a8c;
-    display:flex;
+  justify-content: flex-end;
+  padding-right: 8px;
+  background-color: #878a8c;
+  display: flex;
+  border-radius: 0px 5px 5px 0px;
 }
 
-.num-guesses{
-    font-weight: bold;
-    color: white;
+.num-guesses {
+  font-weight: bold;
+  color: white;
 }
 
 .guess {
-    width: 10px;
-    font-weight: bold;
-    text-align: right;
-  }
+  width: 10px;
+  font-weight: bold;
+  text-align: right;
+  margin-left: -10px;
+}
