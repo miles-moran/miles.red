@@ -8,8 +8,8 @@ export const Bio = () => {
         Bio
       </h1>
       <div style={{ fontWeight: "400" }} target="_blank">
-          Under Construction
-        </div>
+        Yes, I have a hotmail.
+      </div>
     </div>
   );
 };
