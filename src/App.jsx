@@ -1,13 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
-import { Home } from "./components/Home";
-import { Projects } from "./components/Projects";
-import { Wordle } from "./components/Wordle";
+import { Home } from "./components/me/Home";
+import { Projects } from "./components/me/Projects";
+import { Wordle } from "./components/projects/wordle/Wordle";
+import "./components/me/me.css"
 
 const App = () => {
-  useEffect(() => {
-    document.title = 'Miles Moran'
-  }, []);
   return (
     <Router>
     <Routes> 
