@@ -1,10 +1,20 @@
-export const Board = ({ solution, attempts, bad }) => {
+export const Board = ({ solution, attempts, bad, loading }) => {
   const styles = {
     green: "#6aaa64",
     yellow: "#c9b458",
     gray: "#787c7e",
-    o: "none",
+    o: "black",
   };
+  let blocks = attempts;
+  if (loading) {
+    blocks = [
+      {
+        colors: ["gray", "yellow", "green", "yellow", "gray"],
+        guess: "loads",
+      },
+    ];
+  }
+  console.log(blocks);
   return (
     <div className="center-container">
       <div id="board">
@@ -16,10 +26,10 @@ export const Board = ({ solution, attempts, bad }) => {
               </span>
             ))}
         </div>
-        {attempts.map((attempt, a) => (
+        {blocks.map((attempt, a) => (
           <div className="row" key={`guess-${a}`}>
             {attempt.colors.map((color, l) => (
-              <span className="tile" style={{ backgroundColor: styles[color] }} key={`guess-${a}-${l}`}>
+              <span className={loading ? `tile loading-${l}` : "tile"} style={{ backgroundColor: styles[color] }} key={`guess-${a}-${l}`}>
                 {attempt.guess[l]}
               </span>
             ))}

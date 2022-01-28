@@ -10,6 +10,7 @@ export const Wordle = () => {
   const [attempts, setAttempts] = useState([]);
   const [bad, setBad] = useState(false);
   const [modal, setModal] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const solve = () => {
     const shake = async () => {
@@ -21,15 +22,19 @@ export const Wordle = () => {
       shake();
       return;
     }
+    setLoading(true);
     axios
       .post("https://em4lpay7od.execute-api.us-east-1.amazonaws.com/dev/solve", { solution })
       .then((res) => {
         console.log(res);
         const attempts = res.data.attempts;
-
         setAttempts(attempts);
+        setLoading(false);
       })
-      .catch(() => shake());
+      .catch(() => {
+        shake();
+        setLoading(false);
+      });
   };
 
   const handleKeyDown = useCallback(
@@ -102,7 +107,7 @@ export const Wordle = () => {
     if (d > 6) {
       backgroundColor = "#f5793a";
     }
-    if (d === attempts.length.toString()){
+    if (d === attempts.length.toString()) {
       backgroundColor = "#6aaa64";
     }
 
@@ -122,7 +127,7 @@ export const Wordle = () => {
         </div>
       </div>
 
-      <Board solution={solution} attempts={attempts} bad={bad} />
+      <Board solution={solution} attempts={attempts} bad={bad} loading={loading} />
       <Keyboard handleKeyboard={handleKeyboard} />
       {modal === "data" && (
         <div className="modal">
@@ -138,7 +143,7 @@ export const Wordle = () => {
                 <div key={d} className="graph-container">
                   <div className="guess">{d}</div>
                   <div className="graph">
-                    <div className='graph-bar' style={getBarStyles(d)}>
+                    <div className="graph-bar" style={getBarStyles(d)}>
                       <div className="num-guesses">{distibution[d]}</div>
                     </div>
                   </div>
@@ -155,9 +160,7 @@ export const Wordle = () => {
               <i onClick={() => toggleModal(null)} style={{ float: "right" }} className="fas wordle-icon fa-lg fa-times"></i>
             </div>
             <h3>How it works:</h3>
-            <p>
-             While there are only 2,315 possible solutions, this app uses a pool of over 5,000 additional words to guess. This script takes a conservative approach to the game and aims to solve in fewer than seven turns, rather than going for a high average score.
-            </p>
+            <p>While there are only 2,315 possible solutions, this app uses a pool of over 5,000 additional words to guess. This script takes a conservative approach to the game and aims to solve in fewer than seven turns, rather than going for a high average score.</p>
             <h3>Credits to:</h3>
             <p>
               Power Language, creator of{" "}
@@ -167,9 +170,8 @@ export const Wordle = () => {
             </p>
             <h3>Code:</h3>
             <a href="https://www.powerlanguage.co.uk/wordle/" className="a-git" target="_blank" rel="noreferrer">
-                github
-              </a>
-      
+              github
+            </a>
           </div>
         </div>
       )}

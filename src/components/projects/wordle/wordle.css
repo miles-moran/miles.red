@@ -215,3 +215,37 @@
   text-align: right;
   margin-left: -10px;
 }
+
+@keyframes slidein {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(500%);
+  }
+}
+
+.loading-0 {
+  animation-name: slidein;
+  animation-duration: 5000ms;
+}
+.loading-1 {
+  animation-name: slidein;
+  animation-duration: 4500ms;
+}
+.loading-2 {
+  animation-name: slidein;
+  animation-duration: 4000ms;
+}
+.loading-3 {
+  animation-name: slidein;
+  animation-duration: 4500ms;
+}
+.loading-4 {
+  animation-name: slidein;
+  animation-duration: 5000ms;
+}
+
+
+
+
