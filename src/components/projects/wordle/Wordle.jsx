@@ -169,7 +169,7 @@ export const Wordle = () => {
               </a>
             </p>
             <h3>Code:</h3>
-            <a href="https://www.powerlanguage.co.uk/wordle/" className="a-git" target="_blank" rel="noreferrer">
+            <a href="https://github.com/miles-moran/wordle-solver" className="a-git" target="_blank" rel="noreferrer">
               github
             </a>
           </div>

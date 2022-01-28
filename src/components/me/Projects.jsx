@@ -12,7 +12,7 @@ export const Projects = () => {
         <a className="a-git" href="/projects/wordle" target="_blank">
           app
         </a>{" "}
-        <a className="a-app" href="/projects/wordle" target="_blank">
+        <a className="a-app" href="https://github.com/miles-moran/wordle-solver" target="_blank" rel="noreferrer">
           git
         </a>
       </div>
