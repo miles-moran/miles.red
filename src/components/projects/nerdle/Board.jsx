@@ -10,7 +10,7 @@ export const Board = ({ solution, attempts, bad, loading }) => {
     blocks = [
       {
         colors: ["gray", "yellow", "green", "yellow", "gray", "yellow", "green", "gray"],
-        guess: "loading!",
+        guess: "loading.",
       },
     ];
   }
