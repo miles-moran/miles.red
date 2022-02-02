@@ -30,6 +30,27 @@ export const Projects = () => {
       </div>
       <div className="home-p">
         <div style={{ fontWeight: "400" }} target="_blank">
+          Nerdle Solver
+        </div>
+        <div>
+          Solves {" "}
+          <a href="https://nerdlegame.com/" className="bg-purple a" target="_blank" rel="noreferrer">
+            Nerdle
+          </a>{" "}
+          puzzles.
+        </div>
+        {/* <div className="project-description">
+         python, react, serverless framework
+        </div> */}
+        <a className="a bg-orange" href="/projects/nerdle" target="_blank">
+          app
+        </a>{" "}
+        <a className="a bg-blue" href="https://github.com/miles-moran/nerdle-solver" target="_blank" rel="noreferrer">
+          git
+        </a>
+      </div>
+      <div className="home-p">
+        <div style={{ fontWeight: "400" }} target="_blank">
           Codenamer
         </div>
         <div>

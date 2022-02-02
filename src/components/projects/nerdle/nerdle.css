@@ -1,0 +1,266 @@
+.nerdle-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 5px;
+}
+
+.half {
+  flex: 0.5;
+  background-color: none;
+  display: hidden;
+}
+
+.key-row {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 8px;
+  /* https://stackoverflow.com/questions/46167604/ios-html-disable-double-tap-to-zoom */
+  touch-action: manipulation;
+}
+
+.pop {
+  animation-name: PopIn;
+  animation-duration: 100ms;
+}
+
+@keyframes PopIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  40% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.header {
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  pointer-events: none;
+}
+
+.body {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+@keyframes Shake {
+  10%,
+  90% {
+    transform: translateX(-1px);
+  }
+
+  20%,
+  80% {
+    transform: translateX(2px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-4px);
+  }
+
+  40%,
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+#keyboard {
+  user-select: none;
+  width: 500px;
+}
+
+.key {
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  margin: 0 6px 0 0;
+  height: 58px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #d3d6da;
+  color: #1a1a1b;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+}
+
+.tile {
+  width: 100%;
+  height: 4rem;
+  width: 4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: white;
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.tile::before {
+  content: "";
+  display: inline-block;
+  padding-bottom: 100%;
+}
+
+.blank {
+  color: #1a1a1b;
+}
+
+#board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.vacant {
+  border: 2px solid #d3d6da;
+}
+
+.occupied {
+  border: 2px solid #878a8c;
+}
+
+.bad-guess {
+  animation-name: Shake;
+  animation-duration: 600ms;
+}
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+#wordle-nav {
+  width: 500px;
+}
+
+.special-key {
+  color: white;
+  background-color: #878a8c;
+}
+
+.wordle-icon {
+  color: #878a8c;
+  cursor: pointer;
+}
+
+#wordle-nav {
+  margin-top: 0.5rem;
+  text-align: center;
+  border-bottom: #d3d6da solid 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.graph-container {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.graph {
+  width: 100%;
+  height: 100%;
+  padding-left: 4px;
+}
+
+.graph-bar {
+  justify-content: flex-end;
+  padding-right: 8px;
+  background-color: #878a8c;
+  display: flex;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.num-guesses {
+  font-weight: bold;
+  color: white;
+}
+
+.guess {
+  width: 10px;
+  font-weight: bold;
+  text-align: right;
+  margin-left: -10px;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(500%);
+  }
+}
+
+.loading-0 {
+  animation-name: slidein;
+  animation-duration: 5000ms;
+}
+.loading-1 {
+  animation-name: slidein;
+  animation-duration: 4500ms;
+}
+.loading-2 {
+  animation-name: slidein;
+  animation-duration: 4000ms;
+}
+.loading-3 {
+  animation-name: slidein;
+  animation-duration: 3500ms;
+}
+.loading-4 {
+  animation-name: slidein;
+  animation-duration: 3000ms;
+}
+.loading-5 {
+  animation-name: slidein;
+  animation-duration: 2500ms;
+}
+
+.loading-6 {
+  animation-name: slidein;
+  animation-duration: 2000ms;
+}
+
+.loading-7 {
+  animation-name: slidein;
+  animation-duration: 1500ms;
+}
+
+
+
+
+
