@@ -1,75 +1,72 @@
 import { Navigation } from "./Navigation";
 
 export const Projects = () => {
-  return (
-    <div className="home">
-      <Navigation/>
-      <h1 className="home-h1" style={{ fontSize: "4.5em", fontWeight: 500, marginBottom: 0 }}>
-        Projects
-      </h1>
-      <div className="home-p">
-        <div style={{ fontWeight: "400" }} target="_blank">
-          Wordle Solver
-        </div>
+  const projects = [
+    {
+      title: "Wordle Solver",
+      description: (
         <div>
-          Solves {" "}
+          Solves puzzles based on the internet phenomenon{" "}
           <a href="https://www.powerlanguage.co.uk/wordle/" className="bg-purple a" target="_blank" rel="noreferrer">
             Wordle
-          </a>{" "}
-          puzzles.
+          </a>
+          . <br/> Written in Rust and uses information theory to generate optimal guesses.
         </div>
-        {/* <div className="project-description">
-         python, react, serverless framework
-        </div> */}
-        <a className="a bg-orange" href="/projects/wordle" target="_blank">
-          app
-        </a>{" "}
-        <a className="a bg-blue" href="https://github.com/miles-moran/wordle-solver" target="_blank" rel="noreferrer">
-          git
-        </a>
-      </div>
-      <div className="home-p">
-        <div style={{ fontWeight: "400" }} target="_blank">
-          Nerdle Solver
-        </div>
+      ),
+      app: "/projects/wordle",
+      git: "https://github.com/miles-moran/rustle-api",
+    },
+    {
+      title: "Nerdle Solver",
+      description: (
         <div>
-          Solves {" "}
+          Solves{" "}
           <a href="https://nerdlegame.com/" className="bg-purple a" target="_blank" rel="noreferrer">
             Nerdle
           </a>{" "}
           puzzles.
         </div>
-        {/* <div className="project-description">
-         python, react, serverless framework
-        </div> */}
-        <a className="a bg-orange" href="/projects/nerdle" target="_blank">
-          app
-        </a>{" "}
-        <a className="a bg-blue" href="https://github.com/miles-moran/nerdle-solver" target="_blank" rel="noreferrer">
-          git
-        </a>
-      </div>
-      <div className="home-p">
-        <div style={{ fontWeight: "400" }} target="_blank">
-          Codenamer
-        </div>
+      ),
+      app: "/projects/nerdle",
+      git: "https://github.com/miles-moran/nerdle-solver",
+    },
+    {
+      title: "Codenamer",
+      description: (
         <div>
-          Generates clues for the boardgame{" "}
-          <a className="a bg-purple" href="https://en.wikipedia.org/wiki/Codenames_(board_game)" target="_blank" rel="noreferrer">
-            Codenames
-          </a>
-          .
-        </div>
-        {/* <div className="project-description">
-         python, react
-        </div> */}
-        <a className="a bg-orange" href="https://www.codenamer.com" target="_blank" rel="noreferrer">
-          app
-        </a>{" "}
-        <a className="a bg-blue" href="https://github.com/miles-moran/codenamer" target="_blank" rel="noreferrer">
-          git
+        Generates clues for the boardgame{" "}
+        <a className="a bg-purple" href="https://en.wikipedia.org/wiki/Codenames_(board_game)" target="_blank" rel="noreferrer">
+          Codenames
         </a>
+        .
       </div>
+      ),
+      app: "http://www.codenamer.com",
+      git: "https://github.com/miles-moran/codenamer",
+    },
+  ];
+  return (
+    <div className="home">
+      <Navigation />
+      <h1 className="home-h1" style={{ fontSize: "4.5em", fontWeight: 500, marginBottom: 0 }}>
+        Projects
+      </h1>
+      {projects.map((project) => 
+        <div className="home-p">
+          <div style={{ fontWeight: "400" }} target="_blank">
+            {project.title}
+          </div>
+          <div className="project-description">
+            {project.description}
+            <a className="a bg-orange" href={project.app} target="_blank" rel="noreferrer">
+              app
+            </a>{" "}
+            <a className="a bg-blue" href={project.git} target="_blank" rel="noreferrer">
+              git
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
